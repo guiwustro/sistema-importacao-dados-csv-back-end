@@ -2,7 +2,7 @@ import { Operator } from "./operator.entity";
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 // Many clients > one operator
 
-@Entity("client")
+@Entity("clients")
 export class Client {
 	@PrimaryGeneratedColumn("uuid")
 	id: string;
