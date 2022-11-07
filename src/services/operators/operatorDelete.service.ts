@@ -36,7 +36,6 @@ const operatorDeleteService = async (id: string) => {
 		await clientRepository.save(client!);
 		actualOperator++;
 	}
-	// redistribuir clients
 	await operatorRepository.delete({ id });
 };
 

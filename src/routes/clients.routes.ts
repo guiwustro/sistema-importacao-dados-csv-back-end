@@ -1,12 +1,8 @@
 import { Router } from "express";
 import multer from "multer";
-import fs from "fs";
-import clientCreateController, {
-	IClient,
-} from "../controllers/clients/clientCreate.controller";
+import clientCreateController from "../controllers/clients/clientCreate.controller";
 import clientDeleteController from "../controllers/clients/clientDelete.controller";
 import clientFileListController from "../controllers/clients/clientFileList.controller";
-import csvParse from "csv-parser";
 import importClientMiddleware from "../middlewares/importClient.middleware";
 import { AppError } from "../errors/appError";
 

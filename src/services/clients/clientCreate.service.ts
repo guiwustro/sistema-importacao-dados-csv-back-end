@@ -11,7 +11,6 @@ const clientCreateService = async (clients: IClient[]) => {
 			clients: true,
 		},
 	});
-	// .then((res) => res.sort((a, b) => a.clients.length - b.clients.length));
 	const numberOfOperators = allOperators.length;
 
 	const allClients: Client[] = [];
