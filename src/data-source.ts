@@ -26,6 +26,12 @@ const AppDataSource = new DataSource(
 					process.env.NODE_ENV === "production"
 						? ["dist/src/migrations/*.js"]
 						: ["src/migrations/*.ts"],
+				host: "us-cdbr-east-06.cleardb.net",
+				port: 3306,
+				username: "ba0a79ede1d720",
+				password: "451d8d5f",
+				database: "heroku_f6b6e35aee30eb7",
+
 				// host: "localhost",
 				// port: 3306,
 				// username: "root",
