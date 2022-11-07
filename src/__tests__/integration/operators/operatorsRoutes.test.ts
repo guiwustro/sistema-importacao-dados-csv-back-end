@@ -1,4 +1,3 @@
-import { FileClient } from "./../../../entities/fileClient.entity";
 import { DataSource } from "typeorm";
 import AppDataSource from "../../../data-source";
 import request from "supertest";
@@ -21,7 +20,7 @@ describe("/operators", () => {
 		await connection.destroy();
 	});
 
-	test("POST /operators -  Must be able to create a operator", async () => {
+	test("POST /operators -  Must be able to create an operator", async () => {
 		const mockedOperator = { name: "Operador 1" };
 		const response = await request(app).post("/operators").send(mockedOperator);
 
@@ -101,6 +100,4 @@ describe("/operators", () => {
 		expect(res.status).toBe(204);
 		expect(operatorDeleted).toBe(null);
 	});
-
-	test("DELETE /operators/:id - Should not be able to delete an operator with an invalid id", async () => {});
 });

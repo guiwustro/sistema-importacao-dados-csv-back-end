@@ -4,7 +4,7 @@ import AppDataSource from "../../../data-source";
 import request from "supertest";
 import app from "../../../app";
 
-describe("/operators", () => {
+describe("/clients", () => {
 	let connection: DataSource;
 	beforeAll(async () => {
 		await AppDataSource.initialize()
@@ -15,7 +15,7 @@ describe("/operators", () => {
 				console.error("Error during Data Source initialization", err);
 			});
 		const mockedOperator = { name: "Guilherme" };
-		const response = await request(app).post("/operators").send(mockedOperator);
+		await request(app).post("/operators").send(mockedOperator);
 	});
 
 	afterAll(async () => {
