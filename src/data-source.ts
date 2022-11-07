@@ -11,7 +11,6 @@ const AppDataSource = new DataSource(
 		  }
 		: {
 				type: "mysql",
-				url: process.env.DATABASE_URL,
 				ssl:
 					process.env.NODE_ENV === "production"
 						? { rejectUnauthorized: false }
@@ -26,46 +25,24 @@ const AppDataSource = new DataSource(
 					process.env.NODE_ENV === "production"
 						? ["dist/src/migrations/*.js"]
 						: ["src/migrations/*.ts"],
-				host: "us-cdbr-east-06.cleardb.net",
 				port: 3306,
-				username: "ba0a79ede1d720",
-				password: "451d8d5f",
-				database: "heroku_f6b6e35aee30eb7",
-
-				// host: "localhost",
-				// port: 3306,
-				// username: "root",
-				// password: "password",
-				// database: "import-csv-db",
+				host:
+					process.env.NODE_ENV === "production"
+						? process.env.HOST_PROD
+						: process.env.HOST_LOCAL,
+				username:
+					process.env.NODE_ENV === "production"
+						? process.env.USER_PROD
+						: process.env.USER_LOCAL,
+				password:
+					process.env.NODE_ENV === "production"
+						? process.env.PASSWORD_PROD
+						: process.env.PASSWORD_LOCAL,
+				database:
+					process.env.NODE_ENV === "production"
+						? process.env.DATABASE_PROD
+						: process.env.DATABASE_LOCAL,
 		  }
 );
-
-// const AppDataSource = new DataSource(
-// 	process.env.NODE_ENV === "test"
-// 		? {
-// 				type: "sqlite",
-// 				database: ":memory:",
-// 				synchronize: true,
-// 				entities: ["src/entities/*.ts"],
-// 		  }
-// 		: {
-// type: "mysql",
-// host: "localhost",
-// port: 3306,
-// username: "root",
-// password: "password",
-// database: "import-csv-db",
-// logging: true,
-// synchronize: false,
-// 				entities:
-// 					process.env.NODE_ENV === "production"
-// 						? ["dist/src/entities/*.js"]
-// 						: ["src/entities/*.ts"],
-// 				migrations:
-// 					process.env.NODE_ENV === "production"
-// 						? ["dist/src/migrations/*.js"]
-// 						: ["src/migrations/*.ts"],
-// 		  }
-// );
 
 export default AppDataSource;
