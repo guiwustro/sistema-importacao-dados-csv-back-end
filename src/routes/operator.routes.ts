@@ -7,7 +7,6 @@ const routes = Router();
 
 routes.post("", operatorCreateController);
 routes.get("", operatorListController);
-routes.patch("/:id");
 routes.delete("/:id", operatorDeleteController);
 
 export default routes;

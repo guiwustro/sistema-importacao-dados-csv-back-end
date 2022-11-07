@@ -2,6 +2,8 @@ import fs from "fs";
 import { IClient } from "../controllers/clients/clientCreate.controller";
 
 import csvParse from "csv-parser";
+import { FileClient } from "../entities/fileClient.entity";
+import AppDataSource from "../data-source";
 
 /**
  * Pass an object and return a object with all keys into lowercase
@@ -16,9 +18,14 @@ const toLowerKeys = (obj: any) => {
 const importClientMiddleware = (
 	file: Express.Multer.File
 ): Promise<IClient[]> => {
-	return new Promise((resolver, reject) => {
+	return new Promise(async (resolver, reject) => {
 		const stream = fs.createReadStream(file.path);
 		const parseFile = csvParse();
+
+		const fileRepository = AppDataSource.getRepository(FileClient);
+		const fileClient = new FileClient();
+		fileClient.name = file.originalname;
+		const newFileClient = await fileRepository.save(fileClient);
 
 		stream.pipe(parseFile);
 
@@ -39,6 +46,7 @@ const importClientMiddleware = (
 					birthDate,
 					value: valor,
 					email: email,
+					fileClient: newFileClient,
 				});
 			})
 			.on("end", () => {
