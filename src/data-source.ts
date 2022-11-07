@@ -26,22 +26,10 @@ const AppDataSource = new DataSource(
 						? ["dist/src/migrations/*.js"]
 						: ["src/migrations/*.ts"],
 				port: 3306,
-				host:
-					process.env.NODE_ENV === "production"
-						? process.env.HOST_PROD
-						: process.env.HOST_LOCAL,
-				username:
-					process.env.NODE_ENV === "production"
-						? process.env.USER_PROD
-						: process.env.USER_LOCAL,
-				password:
-					process.env.NODE_ENV === "production"
-						? process.env.PASSWORD_PROD
-						: process.env.PASSWORD_LOCAL,
-				database:
-					process.env.NODE_ENV === "production"
-						? process.env.DATABASE_PROD
-						: process.env.DATABASE_LOCAL,
+				host: process.env.HOST_LOCAL,
+				username: process.env.USER_LOCAL,
+				password: process.env.PASSWORD_LOCAL,
+				database: process.env.DATABASE_LOCAL,
 				url: process.env.CLEARDB_ROSE_URL,
 		  }
 );
