@@ -26,7 +26,6 @@ const operatorCreateService = async ({
 		const client = allClients[i];
 		if (actualOperator === numberOfOperators) actualOperator = 0;
 		client.operator = allOperators[actualOperator];
-		// clientRepository.update(client.id, );
 		await clientRepository.save(client);
 		actualOperator++;
 	}

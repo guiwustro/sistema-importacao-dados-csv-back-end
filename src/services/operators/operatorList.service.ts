@@ -1,6 +1,7 @@
 import { Operator } from "./../../entities/operator.entity";
 import { IOperator } from "../../controllers/operators/operatorCreate.controller";
 import AppDataSource from "../../data-source";
+import { formatDateToString } from "../../utils/formatDate";
 
 const operatorListService = async (): Promise<IOperator[]> => {
 	const operatorRepository = AppDataSource.getRepository(Operator);
@@ -11,15 +12,12 @@ const operatorListService = async (): Promise<IOperator[]> => {
 	});
 	const operatorsWithStringDate = allOperators.map((operator) => {
 		const clients = operator.clients;
-		const updatedClients = clients.map((client) => {
-			const year = client.birthDate.getFullYear();
-			let month = (client.birthDate.getMonth() + 1).toString();
-			if (+month < 10) month = "0" + month;
-			let day = client.birthDate.getDate().toString();
-			if (+day < 10) day = "0" + day;
-			const stringDate = `${day}/${month}/${year}`;
-			return { ...client, birthDate: stringDate };
-		});
+		const updatedClients = clients
+			.map((client) => {
+				const stringDate = formatDateToString(client.birthDate);
+				return { ...client, birthDate: stringDate };
+			})
+			.sort((a, b) => +a.id - +b.id);
 
 		return { ...operator, clients: updatedClients };
 	});

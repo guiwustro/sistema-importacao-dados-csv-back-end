@@ -28,7 +28,6 @@ const operatorDeleteService = async (id: string) => {
 		const client = await clientRepository.findOneBy({
 			id: operatorToDelete?.clients[i].id,
 		});
-		console.log(client, "client");
 
 		if (actualOperator === numberOfOperators) actualOperator = 0;
 
@@ -37,7 +36,6 @@ const operatorDeleteService = async (id: string) => {
 		await clientRepository.save(client!);
 		actualOperator++;
 	}
-	console.log(allOperators);
 	// redistribuir clients
 	await operatorRepository.delete({ id });
 };
