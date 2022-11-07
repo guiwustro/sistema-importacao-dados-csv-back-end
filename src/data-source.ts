@@ -42,6 +42,7 @@ const AppDataSource = new DataSource(
 					process.env.NODE_ENV === "production"
 						? process.env.DATABASE_PROD
 						: process.env.DATABASE_LOCAL,
+				url: process.env.CLEARDB_ROSE_URL,
 		  }
 );
 
