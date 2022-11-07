@@ -4,7 +4,7 @@ import { Client } from "./client.entity";
 
 @Entity("operators")
 export class Operator {
-	@PrimaryGeneratedColumn("uuid")
+	@PrimaryGeneratedColumn("increment")
 	id: string;
 
 	@Column()

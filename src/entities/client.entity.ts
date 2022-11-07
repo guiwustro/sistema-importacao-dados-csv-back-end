@@ -4,7 +4,7 @@ import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("clients")
 export class Client {
-	@PrimaryGeneratedColumn("uuid")
+	@PrimaryGeneratedColumn("increment")
 	id: string;
 
 	@Column()

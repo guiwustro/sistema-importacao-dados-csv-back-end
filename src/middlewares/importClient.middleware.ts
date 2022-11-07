@@ -34,7 +34,6 @@ const importClientMiddleware = (
 				const year = nascimento.split("/")[2];
 
 				const birthDate = new Date(year, month, day);
-
 				clients.push({
 					name: nome,
 					birthDate,

@@ -12,6 +12,7 @@ export interface IClient {
 }
 const clientCreateController = async (req: Request, res: Response) => {
 	const clients = req.clients;
+
 	const newClients = await clientCreateService(clients);
 	return res.status(201).json(newClients);
 };
