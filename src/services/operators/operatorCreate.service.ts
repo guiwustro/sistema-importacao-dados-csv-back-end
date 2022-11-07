@@ -2,10 +2,14 @@ import { Operator } from "./../../entities/operator.entity";
 import { IOperator } from "../../controllers/operators/operatorCreate.controller";
 import AppDataSource from "../../data-source";
 import { Client } from "../../entities/client.entity";
+import { AppError } from "../../errors/appError";
 
 const operatorCreateService = async ({
 	name,
 }: IOperator): Promise<IOperator> => {
+	if (name == undefined)
+		throw new AppError("Deve ser inserido um name para o operador.");
+
 	const operatorRepository = AppDataSource.getRepository(Operator);
 
 	const clientRepository = AppDataSource.getRepository(Client);

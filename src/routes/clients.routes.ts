@@ -8,6 +8,7 @@ import clientDeleteController from "../controllers/clients/clientDelete.controll
 import clientFileListController from "../controllers/clients/clientFileList.controller";
 import csvParse from "csv-parser";
 import importClientMiddleware from "../middlewares/importClient.middleware";
+import { AppError } from "../errors/appError";
 
 const routes = Router();
 
@@ -20,6 +21,7 @@ routes.post(
 	upload.single("file"),
 	async (req, res, next) => {
 		const { file } = req;
+		if (!file) throw new AppError("File not found");
 		const files = await importClientMiddleware(file!);
 		req.clients = files;
 		next();

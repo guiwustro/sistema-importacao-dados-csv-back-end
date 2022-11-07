@@ -10,11 +10,9 @@ const clientDeleteService = async (id: string) => {
 			fileClient: true,
 		},
 	});
-	console.log(clients, "aq");
 	const clientsWithParmsId = clients.filter(
 		(client) => client.fileClient.id.toString() === id
 	);
-	console.log(clientsWithParmsId, "aq");
 
 	for (let i = 0; i < clientsWithParmsId.length; i++) {
 		const clientId = clientsWithParmsId[i].id;
