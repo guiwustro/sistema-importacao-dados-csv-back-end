@@ -25,7 +25,7 @@ const clientCreateService = async (clients: IClient[]) => {
 		allClients.push(newClient);
 		actualOperator++;
 	}
-
+	//tratativa pra ficar mais fácil para o front-end!
 	const clientsReturn = allClients.map((client) => {
 		const removeClientsOperatorObj = {
 			id: client.operator.id,

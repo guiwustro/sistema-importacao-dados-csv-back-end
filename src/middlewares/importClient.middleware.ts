@@ -19,6 +19,7 @@ const importClientMiddleware = (
 	file: Express.Multer.File
 ): Promise<IClient[]> => {
 	return new Promise(async (resolver, reject) => {
+		//read the document
 		const stream = fs.createReadStream(file.path);
 		const parseFile = csvParse();
 
@@ -26,10 +27,11 @@ const importClientMiddleware = (
 		const fileClient = new FileClient();
 		fileClient.name = file.originalname;
 		const newFileClient = await fileRepository.save(fileClient);
-
+		//sends the read file to be converted to JSON
 		stream.pipe(parseFile);
 
 		const clients: IClient[] = [];
+		// make an iteration for each line of the file
 		parseFile
 			.on("data", async (line) => {
 				const client = toLowerKeys(line);
