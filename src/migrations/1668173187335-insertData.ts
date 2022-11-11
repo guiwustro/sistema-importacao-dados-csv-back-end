@@ -2,7 +2,7 @@ import { MigrationInterface, QueryRunner } from "typeorm";
 
 export class insertData1668173187335 implements MigrationInterface {
 	public async up(queryRunner: QueryRunner): Promise<void> {
-		`
+		await queryRunner.query(`
         INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Tarik Leach","2022-08-02 14:29:55","commodo.hendrerit@yahoo.couk","43573"),
@@ -14,8 +14,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Rose Landry","2022-09-11 23:59:27","tellus.lorem@hotmail.ca","13201"),
           ("Chase Newton","2022-12-19 19:00:00","tincidunt.tempus.risus@outlook.net","47160"),
           ("Lunea Harmon","2023-07-13 06:55:13","orci.ut.sagittis@aol.net","873"),
-          ("Patrick Odom","2023-07-15 13:02:07","molestie.tortor.nibh@google.edu","97906");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Patrick Odom","2023-07-15 13:02:07","molestie.tortor.nibh@google.edu","97906")`);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Kevin David","2022-04-24 20:16:39","luctus.ut@aol.couk","40154"),
           ("Oscar Cotton","2022-09-30 14:01:03","vivamus.sit@aol.couk","28239"),
@@ -27,7 +27,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Damian Burton","2022-01-31 09:16:01","molestie@google.net","83970"),
           ("Andrew Hobbs","2021-11-26 04:57:06","lobortis.quam@aol.ca","44589"),
           ("Avram Mayo","2022-08-16 06:11:44","vel.faucibus.id@outlook.net","19200");
-        INSERT INTO clients (name,birthDate,email,value)
+      `);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Hamish Chen","2022-01-15 00:18:05","eget.magna@hotmail.ca","4991"),
           ("Walker Erickson","2023-07-22 07:54:31","dignissim.pharetra.nam@google.edu","20709"),
@@ -39,7 +40,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Octavia Morton","2022-03-15 04:24:06","dolor.dapibus.gravida@icloud.net","27995"),
           ("Donna Mcleod","2023-10-02 03:29:34","eget.odio@protonmail.ca","93178"),
           ("Mara ONeill","2022-08-19 18:13:36","nulla.cras.eu@outlook.net","30790");
-        INSERT INTO clients (name,birthDate,email,value)
+      `);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Quintessa Collier","2022-10-23 15:22:20","parturient.montes.nascetur@google.com","92989"),
           ("Tanner Spencer","2022-08-08 13:10:52","a.facilisis.non@icloud.couk","86049"),
@@ -50,8 +52,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Tamara Keller","2022-05-08 08:13:20","ut@protonmail.com","84796"),
           ("Shaine Oneal","2023-02-16 06:48:23","mi.aliquam@protonmail.ca","34686"),
           ("Zeph Atkins","2023-08-08 19:37:12","malesuada.id@yahoo.edu","29907"),
-          ("Kevyn Juarez","2023-01-09 05:04:40","quis.massa.mauris@protonmail.ca","62797");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Kevyn Juarez","2023-01-09 05:04:40","quis.massa.mauris@protonmail.ca","62797")`);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Mara Goodwin","2022-02-23 20:37:19","ut.molestie@hotmail.edu","45945"),
           ("Abdul Romero","2022-03-07 08:36:55","tellus.faucibus.leo@yahoo.couk","53164"),
@@ -62,8 +64,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Wynne Lowe","2023-04-30 06:10:58","odio@hotmail.edu","9541"),
           ("Rowan Randolph","2023-11-08 23:20:15","ac.fermentum@protonmail.ca","14331"),
           ("Whoopi Henson","2022-04-24 21:21:44","mi.duis.risus@aol.net","64558"),
-          ("Heather Hobbs","2023-05-14 14:17:15","praesent.eu.dui@outlook.ca","30404");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Heather Hobbs","2023-05-14 14:17:15","praesent.eu.dui@outlook.ca","30404");`);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Kevyn Berry","2022-04-20 22:35:34","luctus.et@outlook.couk","79121"),
           ("Rinah Knox","2023-08-14 02:55:45","nonummy@protonmail.com","24642"),
@@ -74,8 +76,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Lucas Vang","2023-06-21 01:14:18","malesuada.vel@outlook.com","74041"),
           ("Priscilla Cohen","2023-02-23 10:18:21","urna.nunc@hotmail.edu","14729"),
           ("James Dale","2023-07-11 11:02:50","bibendum@aol.couk","98822"),
-          ("Curran Ray","2022-07-24 05:51:58","venenatis.vel@outlook.edu","68629");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Curran Ray","2022-07-24 05:51:58","venenatis.vel@outlook.edu","68629");`);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Solomon Coffey","2023-08-30 00:33:35","cum@icloud.edu","61335"),
           ("Ryder Miles","2022-10-18 08:42:13","ut.lacus@icloud.ca","29776"),
@@ -86,8 +88,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Belle Holder","2023-03-02 22:48:45","semper@yahoo.com","10739"),
           ("Sharon Guy","2023-05-11 22:22:47","penatibus.et@hotmail.edu","38848"),
           ("Maggie Thompson","2023-06-03 17:57:25","integer.mollis@google.org","28778"),
-          ("Jade Johnston","2022-11-12 19:24:20","pede@google.edu","14932");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Jade Johnston","2022-11-12 19:24:20","pede@google.edu","14932"); `);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Kennan Hendricks","2022-02-12 14:11:26","arcu.nunc@google.couk","5866"),
           ("Garrett Hood","2022-03-31 05:49:23","mi.aliquam.gravida@aol.ca","53331"),
@@ -98,8 +100,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Leah Beard","2023-07-09 02:17:12","neque@icloud.com","7640"),
           ("Sean Joyce","2022-02-04 11:46:45","libero.est@icloud.ca","40708"),
           ("Zachary Mcdowell","2021-11-11 21:10:29","suspendisse.commodo.tincidunt@icloud.ca","42014"),
-          ("Daryl Alston","2023-04-10 19:28:01","lorem.semper@hotmail.ca","98025");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Daryl Alston","2023-04-10 19:28:01","lorem.semper@hotmail.ca","98025"); `);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Aladdin Fuller","2023-08-19 12:33:12","et@google.couk","17887"),
           ("Levi Carver","2022-08-09 10:08:44","phasellus.vitae@aol.org","12647"),
@@ -110,8 +112,8 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Gavin Mcgee","2023-02-03 13:40:45","hendrerit.id.ante@yahoo.edu","88226"),
           ("Alexis Hays","2022-02-11 08:20:58","dui.suspendisse.ac@yahoo.net","80747"),
           ("Rhea Pickett","2022-09-06 17:52:00","eros.non@icloud.com","25922"),
-          ("Angelica Rasmussen","2023-10-30 10:18:05","aliquet.libero@yahoo.couk","26142");
-        INSERT INTO clients (name,birthDate,email,value)
+          ("Angelica Rasmussen","2023-10-30 10:18:05","aliquet.libero@yahoo.couk","26142");`);
+		await queryRunner.query(`INSERT INTO clients (name,birthDate,email,value)
         VALUES
           ("Jasmine Massey","2022-02-17 02:07:45","urna.ut@protonmail.org","47366"),
           ("Rhoda Diaz","2023-08-16 04:36:05","ridiculus@outlook.ca","54399"),
@@ -122,8 +124,7 @@ export class insertData1668173187335 implements MigrationInterface {
           ("Wallace Griffin","2023-07-31 21:40:00","faucibus.lectus@google.org","19363"),
           ("Kiayada Fischer","2023-07-28 11:10:48","auctor.non@aol.org","71371"),
           ("Robert Morris","2022-07-20 07:55:10","nec.mollis@outlook.org","43486"),
-          ("Cheyenne Avery","2023-04-23 01:22:29","quis.tristique@icloud.ca","85353");
-        `;
+          ("Cheyenne Avery","2023-04-23 01:22:29","quis.tristique@icloud.ca","85353"); `);
 	}
 
 	public async down(queryRunner: QueryRunner): Promise<void> {}
