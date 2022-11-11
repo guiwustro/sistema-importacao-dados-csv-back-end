@@ -30,7 +30,7 @@ const AppDataSource = new DataSource(
 				username: process.env.USER_LOCAL,
 				password: process.env.PASSWORD_LOCAL,
 				database: process.env.DATABASE_LOCAL,
-				url: process.env.CLEARDB_ROSE_URL,
+				// url: process.env.CLEARDB_ROSE_URL,
 		  }
 );
 
